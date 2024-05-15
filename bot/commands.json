@@ -1,0 +1,52 @@
+{
+    "_default": {
+        "3": {
+            "name": "bot",
+            "response": "je ne suis pas un bot de merde !  :("
+        },
+        "5": {
+            "name": "lordlama",
+            "response": "Le petit lama va devenir grand ! @{user}"
+        },
+        "6": {
+            "name": "beau",
+            "response": "T'es boooo <3 @{user}"
+        },
+        "7": {
+            "name": "user",
+            "response": "{user}"
+        },
+        "8": {
+            "name": "hello",
+            "response": "Salut {user} comment va tu ? :)"
+        },
+        "9": {
+            "name": "krating",
+            "response": "@kratingdeang ! Le best des streamers !! On t'aime !"
+        },
+        "10": {
+            "name": "kratinet",
+            "response": "Salut Soeurette robot !! Comment vont tes circuits ? @kratinet !"
+        },
+        "11": {
+            "name": "caf",
+            "response": "Qu'elle caf\u00e9 {user} ? 1: caf\u00e9 2: double 3:latt\u00e9"
+        },
+        "12": {
+            "name": "lionanniv",
+            "response": "BON ANNIV !! Que le soleil et l'amour t'accompagne !"
+        },
+        "13": {
+            "name": "boss",
+            "response": "C'est toi le boss {user}"
+        },
+        "14": {
+            "name": "Boss",
+            "response": "C'est pas @QQlaPraline_ le boss en tout cas {user}"
+        },
+        "15": {
+            "name": "repet",
+            "response": "{user} a dis  {message}"
+        }
+    }
+}
