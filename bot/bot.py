@@ -1,5 +1,6 @@
 import os
 import sys
+from dotenv import load_dotenv
 from typing import Annotated
 from twitchio.ext import commands, routines, eventsub
 from twitchio.ext.commands import Command
@@ -12,14 +13,14 @@ from models.character import Character
 CHANNEL = "qqlapraline_"
 DB_COMMANDS = "commands.json"
 CHARACTER_DATA_PATH = "../data/character_data.json"
-
+load_dotenv()
 
 class Bot(commands.Bot):
     def __init__(self):
         super().__init__(
-            token="hz59p0wmy1h0defv1d41akzcc8la5g",
+            token = os.getenv('TOKEN'),
             prefix="!",
-            client_secret="ksmbqk5juc8ur0zwjvel0jro5s37lu",
+            client_secret = os.getenv('CLIENT_SECRET'),
             initial_channels=[CHANNEL],
         )
         self.db = TinyDB(DB_COMMANDS, indent=4)
