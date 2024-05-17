@@ -2,43 +2,40 @@
     "_default": {
         "1": {
             "id": 1,
-            "activate": false,
+            "activate": true,
             "name": "Rencontre",
-            "descritpion": "Vous croisez un groupe de gentil lapin magiques",
+            "description": "Vous croisez un groupe de gentil lapin magiques",
             "drop": 50,
-            "type": "PNJ",
-            "choice": [
+            "type": "TALK",
+            "state": 0,
+            "choices": [
                 {
-                    "1": "Parler au Pnj",
-                    "2": "Passer son chemin"
-                }
-            ],
-            "state": -1,
-            "user_choices": [
+                    "id": 1,
+                    "choice": "Leurs courir apr\u00e8s ! ",
+                    "general": {
+                        "desc": "Vous vous \u00e9puisez \u00e0 leurs courir joyeusement, avec un sourire b\u00e9ant",
+                        "key": "water",
+                        "amount": -5
+                    },
+                    "personal": {
+                        "desc": "Les plus 'coureurs' gagne en cardio ! ",
+                        "key": "hp",
+                        "amount": 3
+                    }
+                },
                 {
-                    "1": 0,
-                    "2": 0
-                }
-            ]
-        },
-        "2": {
-            "id": 2,
-            "activate": false,
-            "name": "Combat",
-            "descritpion": "Des gobelins attaque ! ",
-            "drop": 50,
-            "type": "FIGHT",
-            "choice": [
-                {
-                    "1": "",
-                    "2": ""
-                }
-            ],
-            "state": -1,
-            "user_choice": [
-                {
-                    "1": 0,
-                    "2": 0
+                    "id": 2,
+                    "choice": "Hmmmm... on a faim quand m\u00eame..",
+                    "general": {
+                        "desc": "Lapin roti ce soir !",
+                        "key": "food",
+                        "amount": 5
+                    },
+                    "personal": {
+                        "desc": "Pour les dalleux !",
+                        "key": "hp",
+                        "amount": 2
+                    }
                 }
             ]
         }

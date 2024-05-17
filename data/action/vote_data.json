@@ -1,0 +1,34 @@
+{
+    "_default": {
+        "1": {
+            "choice": 1,
+            "general": {
+                "desc": "Vous vous épuisez à leurs courir joyeusement, avec un sourire béant",
+                "key": "water",
+                "amount": -5
+            },
+            "personal": {
+                "desc": "Les plus 'coureurs' gagne en cardio ! ",
+                "key": "hp",
+                "amount": 3
+            },
+            "player_list": [],
+            "count": 0
+        },
+        "2": {
+            "choice": 2,
+            "general": {
+                "desc": "Lapin roti ce soir !",
+                "key": "food",
+                "amount": 5
+            },
+            "personal": {
+                "desc": "Pour les dalleux !",
+                "key": "hp",
+                "amount": 2
+            },
+            "player_list": [],
+            "count": 0
+        }
+    }
+}

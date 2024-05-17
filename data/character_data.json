@@ -1,6 +1,9 @@
 {
     "Character": {
         "1": {
+            "id": 1,
+            "viewer": "",
+            "online": false,
             "name": "",
             "level": 1,
             "hp": 100,
@@ -11,9 +14,12 @@
             "style": 1
         },
         "2": {
-            "name": "qqlapraline_",
+            "id": 2,
+            "viewer": "qqlapraline_",
+            "online": false,
+            "name": "",
             "level": 1,
-            "hp": 100,
+            "hp": 103,
             "attack": 1,
             "defense": 1,
             "intel": 1,
@@ -21,7 +27,36 @@
             "style": 1
         },
         "3": {
-            "name": "lordlama92",
+            "id": 3,
+            "viewer": "lordlama92",
+            "online": false,
+            "name": "",
+            "level": 1,
+            "hp": 111,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
+        },
+        "4": {
+            "id": 4,
+            "viewer": "dakimedoko",
+            "online": false,
+            "name": "",
+            "level": 1,
+            "hp": 102,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
+        },
+        "5": {
+            "id": 5,
+            "viewer": "latomeuh",
+            "online": false,
+            "name": "",
             "level": 1,
             "hp": 100,
             "attack": 1,
@@ -30,27 +65,13 @@
             "social": 1,
             "style": 1
         },
-        "4": {
-            "name": "dakimedoko",
-            "level": 1,
-            "attack": 1,
-            "defense": 1,
-            "intel": 1,
-            "social": 1,
-            "style": 1
-        },
-        "5": {
-            "name": "latomeuh",
-            "level": 1,
-            "attack": 1,
-            "defense": 1,
-            "intel": 1,
-            "social": 1,
-            "style": 1
-        },
         "6": {
-            "name": "lordryoo",
+            "id": 6,
+            "viewer": "lordryoo",
+            "online": false,
+            "name": "",
             "level": 1,
+            "hp": 100,
             "attack": 1,
             "defense": 1,
             "intel": 1,
@@ -58,8 +79,12 @@
             "style": 1
         },
         "7": {
-            "name": "gosnaap",
+            "id": 7,
+            "viewer": "gosnaap",
+            "online": false,
+            "name": "",
             "level": 1,
+            "hp": 100,
             "attack": 1,
             "defense": 1,
             "intel": 1,
@@ -67,8 +92,12 @@
             "style": 1
         },
         "8": {
-            "name": "maraudeur720",
+            "id": 8,
+            "viewer": "maraudeur720",
+            "online": false,
+            "name": "",
             "level": 1,
+            "hp": 100,
             "attack": 1,
             "defense": 1,
             "intel": 1,
@@ -76,8 +105,12 @@
             "style": 1
         },
         "9": {
-            "name": "lukevideo",
+            "id": 9,
+            "viewer": "lukevideo",
+            "online": false,
+            "name": "",
             "level": 1,
+            "hp": 100,
             "attack": 1,
             "defense": 1,
             "intel": 1,
@@ -85,8 +118,12 @@
             "style": 1
         },
         "10": {
-            "name": "soullivaneuh",
+            "id": 10,
+            "viewer": "soullivaneuh",
+            "online": false,
+            "name": "",
             "level": 1,
+            "hp": 100,
             "attack": 1,
             "defense": 1,
             "intel": 1,
@@ -94,8 +131,12 @@
             "style": 1
         },
         "11": {
-            "name": "turbopedro",
+            "id": 11,
+            "viewer": "turbopedro",
+            "online": false,
+            "name": "",
             "level": 1,
+            "hp": 100,
             "attack": 1,
             "defense": 1,
             "intel": 1,

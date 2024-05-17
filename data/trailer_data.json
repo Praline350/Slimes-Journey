@@ -7,15 +7,15 @@
             "atq": 1,
             "def": 1,
             "hp": 50,
-            "position": 185
+            "position": 194
         }
     },
     "Inventory": {
         "1": {
             "ressource": 130,
             "heal": 0,
-            "food": 130,
-            "water": -100
+            "food": 135,
+            "water": -105
         }
     }
 }

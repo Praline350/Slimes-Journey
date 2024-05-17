@@ -1,0 +1,13 @@
+{
+    "_default": {
+        "1": {
+            "name": "Ulok",
+            "race": "Gobelin",
+            "level": 5,
+            "hp": 150,
+            "attack": 15,
+            "defense": 20,
+            "skills": []
+        }
+    }
+}
