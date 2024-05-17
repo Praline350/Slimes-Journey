@@ -9,7 +9,7 @@ from twitchio.ext.commands import Command
 from tinydb import TinyDB, Query
 import time
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from models.character import Character
+from models.character import Character, ActionPlayer
 from models.event import Event, PassiveEvent, ActiveEvent
 
 
@@ -34,6 +34,7 @@ class Bot(commands.Bot):
         self.all_event = Event()
         self.passive_event = PassiveEvent()
         self.active_event = ActiveEvent()
+        self.action = ActionPlayer()
         self.open = False
         self.open_choice = False
         
@@ -147,27 +148,31 @@ class Bot(commands.Bot):
         self.timer = True
         return self.timer
     
-    @commands.cooldown(rate=1, per=10, bucket=commands.Bucket.member)
+    #@commands.cooldown(rate=1, per=10, bucket=commands.Bucket.member)
     @commands.command(name="event")
     async def activate_event(self, ctx: commands.Context):
         state = self.active_event.get_state_event()
         if state == 0:
-            event = self.active_event.get_activate_event()
-            message = event['descritpion']
-            choice = event['choice']
+            event_id = self.active_event.get_activate_id()
+            event = self.active_event.get_event(event_id)
+            message = event['choices'][0]['choice']
+            message2 = event['choices'][1]['choice']
+            desc = event['description']
+            await ctx.send(desc)
             await ctx.send(message)
-            await ctx.send(choice)
+            await ctx.send(message2)
             self.active_event.toggle_state_true()
         else:
             await ctx.send("Pas d'event actif !")
         
-    @commands.cooldown(rate=1, per=180, bucket=commands.Bucket.member)
+    #@commands.cooldown(rate=1, per=180, bucket=commands.Bucket.member)
     @commands.command(name='1', aliases=('2', '3'))
     async def event_choice(self, ctx: commands.Context):
         state = self.active_event.get_state_event()
         if state == 1:
             user_choice = ctx.message.content.lstrip('!')
-            self.active_event.incr_user_choice(user_choice)
+            self.action.incr_user_choice(user_choice, ctx.author.name)
+            await ctx.send(user_choice)
             await ctx.send(f"{ctx.author.name} à voté ! ")
         else:
             await ctx.send("Aucun choix en cours")
