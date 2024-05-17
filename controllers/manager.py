@@ -3,6 +3,7 @@ import sys
 import time
 from tinydb import TinyDB, Query
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+from models.character import ActionPlayer
 from models.event import Event, PassiveEvent, ActiveEvent
 from models.trailer import Trailer 
 
@@ -14,6 +15,7 @@ class Manager:
         self.passive_event = PassiveEvent()
         self.active_event = ActiveEvent()
         self.event = Event()
+        self.action = ActionPlayer()
         
     
 
@@ -46,6 +48,7 @@ class Manager:
         current_event = self.active_event.spawn_event()
         self.active_event.toggle_state_true()
         event_id = self.active_event.get_activate_id()
+        self.active_event.activate_vote()
         while current_event['state'] != 1:
             current_event = self.active_event.get_event(event_id)
             print(current_event['state'])
@@ -57,13 +60,20 @@ class Manager:
         
     def choice_user_event(self):
         self.active_event.progress()
-        event_id = self.active_event.get_activate_id()
         while self.active_event.timer is False:
             print('Donnez votre choix !')
             time.sleep(2)
-        self.active_event.timer = False
-        choice = self.active_event.result_user_choice(event_id)
-        print(choice)
+        #self.active_event.timer = False
+        vote_max = self.action.result_user_choice()
+        print(vote_max)
+        self.action.resolution_event(vote_max)
+        time.sleep(1)
+        self.action.remove_vote()
+        
+
+    def control_event(self, user_choice):
+        pass
+
             
             
 
