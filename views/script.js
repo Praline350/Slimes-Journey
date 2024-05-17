@@ -1,10 +1,22 @@
-const CURRENT_EVENT = "http://127.0.0.1:5000/current_event"
+const CURRENT_EVENT = "http://127.0.0.1:5000/current-passive-event"
+const CURRENT_ACTIF_EVENT = "http://127.0.0.1:5000/current-active-event"
 
 async function get_current_event(){
     const response = await fetch(CURRENT_EVENT);
     const data = await response.json();
     
     return data
+}
+
+
+async function get_current_event_actif(){
+    const response = await fetch(CURRENT_ACTIF_EVENT);
+    const data = await response.json();
+    return data
+}
+
+async function display_actif_event(){
+    
 }
 
 async function display_current_event(){
