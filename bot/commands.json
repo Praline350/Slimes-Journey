@@ -47,6 +47,14 @@
         "15": {
             "name": "repet",
             "response": "{user} a dis  {message}"
+        },
+        "16": {
+            "name": "Latomeuh",
+            "response": "latomeuh le plus bo des bg"
+        },
+        "17": {
+            "name": "laguerredesmodos",
+            "response": "C'est la guerre entre le modos ! (attention vous pourriez vous prendre un ban perdu ;p )"
         }
     }
 }

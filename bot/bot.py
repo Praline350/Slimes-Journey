@@ -1,16 +1,19 @@
 import os
 import sys
+import threading
 from dotenv import load_dotenv
 from typing import Annotated
 from twitchio.ext import commands, routines, eventsub
+from twitchio.ext.commands.errors import CommandOnCooldown
 from twitchio.ext.commands import Command
 from tinydb import TinyDB, Query
-
+import time
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from models.character import Character
+from models.event import Event, PassiveEvent, ActiveEvent
 
 
-CHANNEL = "qqlapraline_"
+CHANNEL = "QQlaPraline_"
 DB_COMMANDS = "commands.json"
 CHARACTER_DATA_PATH = "../data/character_data.json"
 load_dotenv()
@@ -28,6 +31,18 @@ class Bot(commands.Bot):
         for command_name, response in self.commands_dict.items():
             self.add_custom_command(command_name, response)
         self.character = Character()
+        self.all_event = Event()
+        self.passive_event = PassiveEvent()
+        self.active_event = ActiveEvent()
+        self.open = False
+        self.open_choice = False
+        
+
+
+    async def on_commmand_error(self, ctx: commands.Context, error: Exception):
+        if isinstance(error, CommandOnCooldown):
+            await ctx.send(f"Qu'un seul vote !")
+
 
     async def event_ready(self):
         # Notify us when everything is ready!
@@ -39,7 +54,7 @@ class Bot(commands.Bot):
     async def event_message(self, message):
         if message.author is None:
             return
-        print(f"Received message: {message.content} from {message.author.name}")
+        print(f"{message.author.name} : {message.content}")
         await super().event_message(message)
 
     async def send_message(self, ctx, message):
@@ -64,6 +79,7 @@ class Bot(commands.Bot):
         self.db.insert({"name": command_name, "response": response})
         self.commands_dict[command_name] = response
 
+
     @commands.command(name="add")
     async def viewer_add_command(
         self, ctx: commands.Context, command_name: str, *, response: str
@@ -74,6 +90,9 @@ class Bot(commands.Bot):
 
     @commands.command(name="commands")
     async def list_commands(self, ctx: commands.Context):
+        if not self.open:
+            await ctx.send('Pas d evenement')
+            return
         all_commands = self.db.all()
         command_name = [command["name"] for command in all_commands]
         await ctx.send(f"La liste des commandes :  {command_name}")
@@ -118,10 +137,42 @@ class Bot(commands.Bot):
                             f"Defense {data['defense']}, Social {data['social']}, "
                             f"Style {data['style']}")
         else:
-            await ctx.send("Tu n'as pas de perso")
+            await ctx.send("Tu n'as pas encore de perso !")
+
+    def progress(self):
+        threading.Thread(target=self.start_timer).start()
+
+    def start_timer(self):
+        time.sleep(30)
+        self.timer = True
+        return self.timer
+    
+    @commands.cooldown(rate=1, per=10, bucket=commands.Bucket.member)
+    @commands.command(name="event")
+    async def activate_event(self, ctx: commands.Context):
+        state = self.active_event.get_state_event()
+        if state == 0:
+            event = self.active_event.get_activate_event()
+            message = event['descritpion']
+            choice = event['choice']
+            await ctx.send(message)
+            await ctx.send(choice)
+            self.active_event.toggle_state_true()
+        else:
+            await ctx.send("Pas d'event actif !")
         
+    @commands.cooldown(rate=1, per=180, bucket=commands.Bucket.member)
+    @commands.command(name='1', aliases=('2', '3'))
+    async def event_choice(self, ctx: commands.Context):
+        state = self.active_event.get_state_event()
+        if state == 1:
+            user_choice = ctx.message.content.lstrip('!')
+            self.active_event.incr_user_choice(user_choice)
+            await ctx.send(f"{ctx.author.name} à voté ! ")
+        else:
+            await ctx.send("Aucun choix en cours")
 
 
-bot = Bot()
-
-bot.run()
+if __name__ == "__main__":
+    bot = Bot()
+    bot.run()
