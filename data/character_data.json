@@ -29,6 +29,78 @@
             "intel": 1,
             "social": 1,
             "style": 1
+        },
+        "4": {
+            "name": "dakimedoko",
+            "level": 1,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
+        },
+        "5": {
+            "name": "latomeuh",
+            "level": 1,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
+        },
+        "6": {
+            "name": "lordryoo",
+            "level": 1,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
+        },
+        "7": {
+            "name": "gosnaap",
+            "level": 1,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
+        },
+        "8": {
+            "name": "maraudeur720",
+            "level": 1,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
+        },
+        "9": {
+            "name": "lukevideo",
+            "level": 1,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
+        },
+        "10": {
+            "name": "soullivaneuh",
+            "level": 1,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
+        },
+        "11": {
+            "name": "turbopedro",
+            "level": 1,
+            "attack": 1,
+            "defense": 1,
+            "intel": 1,
+            "social": 1,
+            "style": 1
         }
     }
 }

@@ -1,0 +1,29 @@
+{
+    "Passive": {
+        "1": {
+            "name": "Cueillette",
+            "desc": "Vous trouvez des baies",
+            "key": "food",
+            "amount": 5
+        }
+    },
+    "Active": {
+        "1": {
+            "name": "Rencontre",
+            "cmd": "!event",
+            "descritpion": "Vous croisez un groupe de gentil lapin magiques",
+            "type": "PNJ",
+            "choice": [
+                {
+                    "1": "Parler au Pnj",
+                    "2": "Passer son chemin",
+                    "3": "Attaquer les lapins :( "
+                }
+            ],
+            "state": 0,
+            "user_choice_1": 3,
+            "user_choice_2": 5,
+            "user_choice_3": 0
+        }
+    }
+}

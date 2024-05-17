@@ -1,0 +1,46 @@
+{
+    "_default": {
+        "1": {
+            "id": 1,
+            "activate": false,
+            "name": "Rencontre",
+            "descritpion": "Vous croisez un groupe de gentil lapin magiques",
+            "drop": 50,
+            "type": "PNJ",
+            "choice": [
+                {
+                    "1": "Parler au Pnj",
+                    "2": "Passer son chemin"
+                }
+            ],
+            "state": -1,
+            "user_choices": [
+                {
+                    "1": 0,
+                    "2": 0
+                }
+            ]
+        },
+        "2": {
+            "id": 2,
+            "activate": false,
+            "name": "Combat",
+            "descritpion": "Des gobelins attaque ! ",
+            "drop": 50,
+            "type": "FIGHT",
+            "choice": [
+                {
+                    "1": "",
+                    "2": ""
+                }
+            ],
+            "state": -1,
+            "user_choice": [
+                {
+                    "1": 0,
+                    "2": 0
+                }
+            ]
+        }
+    }
+}

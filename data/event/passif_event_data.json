@@ -1,0 +1,41 @@
+{
+    "_default": {
+        "1": {
+            "id": 1,
+            "activate": false,
+            "name": "Cueillette",
+            "desc": "Vous trouvez des baies",
+            "drop": 50,
+            "key": "food",
+            "amount": 5
+        },
+        "2": {
+            "id": 2,
+            "activate": false,
+            "name": "Recolte",
+            "desc": "Vous recoltez du bois",
+            "drop": 50,
+            "key": "ressource",
+            "amount": 5
+            
+        },
+        "3": {
+            "id": 3,
+            "activate": false,
+            "name": "Flasque trou&e",
+            "desc": "Votre flasque d'eau est trouee!",
+            "drop": 50,
+            "key": "water",
+            "amount": -5
+        },
+        "4": {
+            "id": 4,
+            "activate": false,
+            "name": "Cueillette",
+            "desc": "Vous trouvez des pommes juteuses !",
+            "drop": 50,
+            "key": "food",
+            "amount": 5
+        }
+    }
+}

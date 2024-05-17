@@ -4,16 +4,18 @@
             "name": "Trailer",
             "level": 1,
             "state": 100,
-            "comfort": 1,
-            "position": 4,
-            "farm": 1
+            "atq": 1,
+            "def": 1,
+            "hp": 50,
+            "position": 185
         }
     },
     "Inventory": {
         "1": {
-            "ressource": 45,
+            "ressource": 130,
             "heal": 0,
-            "food": 65
+            "food": 130,
+            "water": -100
         }
     }
 }
