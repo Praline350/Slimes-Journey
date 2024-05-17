@@ -9,9 +9,20 @@ event = Event()
 passive_event = PassiveEvent()
 active_event = ActiveEvent()
 
-"""random_event = event.spawn_event('passive')
-print(random_event)"""
-active_event.deactivate_event()
+
+def event_data():
+    event_id = active_event.get_activate_id()
+    event = active_event.get_event(event_id)
+    choice = event['choices']
+    
+    i = 0
+    general = event['choices'][i]['general']
+    print(event['description'])
+
+
+#event_data()
+
+event_data()
 
 """while True:
     state = active_event.get_activate_event()
